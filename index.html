@@ -6,6 +6,7 @@
 <body>
     <h1>Preparing your tweet...</h1>
     <script>
+        // Run immediately when the page loads
         (function() {
             const posts = [
                 "Just chilling today!",
@@ -22,7 +23,8 @@
             const randomIndex = Math.floor(Math.random() * posts.length);
             const message = posts[randomIndex];
             const encodedMessage = encodeURIComponent(message);
-            window.open("https://x.com/intent/tweet?text=" + encodedMessage, "_blank");
+            const url = "https://x.com/intent/tweet?text=" + encodedMessage;
+            window.open(url, "_blank");
         })();
     </script>
 </body>
