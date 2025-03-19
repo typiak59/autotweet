@@ -1,11 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Run My Script</title>
+    <title>Auto-Tweet</title>
 </head>
 <body>
-    <h1>Running the script...</h1>
-    <!-- Link to your JS file -->
-    <script src="autopost.js"></script>
+    <h1>Preparing your tweet...</h1>
+    <script>
+        (function() {
+            const posts = [
+                "Just chilling today!",
+                "What a beautiful morning!",
+                "Time for some coffee.",
+                "Loving this weather!",
+                "Hello world, how’s it going?",
+                "Random thoughts at midnight.",
+                "Can’t stop listening to this song!",
+                "Life is good, isn’t it?",
+                "Trying something new today.",
+                "Wow, what a crazy day!"
+            ];
+            const randomIndex = Math.floor(Math.random() * posts.length);
+            const message = posts[randomIndex];
+            const encodedMessage = encodeURIComponent(message);
+            window.open("https://x.com/intent/tweet?text=" + encodedMessage, "_blank");
+        })();
+    </script>
 </body>
 </html>
